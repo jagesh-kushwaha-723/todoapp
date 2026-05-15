@@ -1,9 +1,13 @@
 package backend.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class TodoResponse {
     private Long id;
     private String title;
@@ -11,15 +15,4 @@ public class TodoResponse {
     private Integer orderIndex;
     private LocalDateTime completedAt;
     private LocalDateTime createdAt;
-
-    public TodoResponse(Long id, String title, Boolean done, 
-                        Integer orderIndex, LocalDateTime completedAt, 
-                        LocalDateTime createdAt) {
-        this.id = id;
-        this.title = title;
-        this.done = done;
-        this.orderIndex = orderIndex;
-        this.completedAt = completedAt;
-        this.createdAt = createdAt;
-    }
 }
