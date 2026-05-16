@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: todoapp-backend
+    runtime: java
+    buildCommand: ./mvnw clean package -DskipTests
+    startCommand: java -jar target/backend-0.0.1-SNAPSHOT.jar
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        value: jdbc:postgresql://todoapp_yita_user:Rhlbf0cMS7CJtsSZYkL06ONt5l8rwHeq@dpg-d845j1beo5us73e0ooo0-a.singapore-postgres.render.com/todoapp_yita
+      - key: SPRING_DATASOURCE_USERNAME
+        value: todoapp_yita_user
+      - key: SPRING_DATASOURCE_PASSWORD
+        sync: false
+      - key: JWT_SECRET
+        sync: false
